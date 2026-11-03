@@ -152,8 +152,8 @@ function Board() {
               <h1 className="mt-2 text-3xl font-semibold tracking-tight">Field board</h1>
               <p className="mt-2 font-mono text-xs text-muted tabular-nums">
                 {openCount} open
-                {lateCount > 0 ? ` \u00b7 ${lateCount} late` : ""}
-                {streak > 0 || clears > 0 || fails > 0 ? ` \u00b7 streak ${streak}` : ""}
+                {lateCount > 0 ? ` · ${lateCount} late` : ""}
+                {streak > 0 || clears > 0 || fails > 0 ? ` · streak ${streak}` : ""}
               </p>
             </header>
 
@@ -299,7 +299,7 @@ function Board() {
                             </span>
                             <span className="mt-1 block font-mono text-xs text-brass">
                               COMPLETED
-                              {task.completedAt != null ? ` \u00b7 ${keepLabel(task.completedAt, now)}` : ""}
+                              {task.completedAt != null ? ` · ${keepLabel(task.completedAt, now)}` : ""}
                             </span>
                           </span>
                           <ChevronRight className="size-4 shrink-0 text-muted" />
@@ -412,15 +412,15 @@ function Checklist({
           {stats.total === 0
             ? "No items yet"
             : stats.cleared
-              ? `COMPLETED${task.completedAt != null ? ` \u00b7 ${keepLabel(task.completedAt, now)}` : ""}`
+              ? `COMPLETED${task.completedAt != null ? ` · ${keepLabel(task.completedAt, now)}` : ""}`
               : `${stats.left} left`}
-          {task.deadline != null ? ` \u00b7 ${late ? "Late" : "Due"} ${formatWhen(task.deadline, now)}` : ""}
+          {task.deadline != null ? ` · ${late ? "Late" : "Due"} ${formatWhen(task.deadline, now)}` : ""}
         </p>
       </header>
 
       {confirmDelete && (
         <div className="border border-signal/50 p-3">
-          <p className="text-sm">Delete \u201c{task.title}\u201d and its checklist?</p>
+          <p className="text-sm">Delete “{task.title}” and its checklist?</p>
           <div className="mt-3 flex gap-2">
             <button
               type="button"
@@ -636,7 +636,7 @@ function TaskMeta({
       node: (
         <span className={cn("inline-flex items-center gap-1", late ? "text-signal" : "text-muted")}>
           <Flag className="size-3.5" />
-          {late ? "Late" : "Due"} \u00b7 {formatWhen(task.deadline, now)}
+          {late ? "Late" : "Due"} · {formatWhen(task.deadline, now)}
         </span>
       ),
     });
