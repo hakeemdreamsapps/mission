@@ -1,16 +1,21 @@
 # Mission
 
-A personal field board. Each task is its own checklist.
+A personal field board. Each task is its own checklist. Lists stay in this browser only. There is no account.
 
-- Add a task, like Groceries, then add the items inside it.
-- Check items off as you go.
-- Tap an item and choose Mission to time that one line.
-- Put a completion date, and an optional alarm, on any task.
-- When every item is checked, the list shows COMPLETED. It stays for 5 days unless you delete it.
+## Run it on a Mac
 
-Lists are stored in this browser only. There is no account.
+1. Install Node.js 20 or newer from https://nodejs.org if you do not already have it. Use the LTS installer.
+2. Open Terminal.
+3. Go into this folder. If you unzipped the GitHub download into Downloads, the folder is named `mission-main`:
 
 ```bash
+cd ~/Downloads/mission-main
 npm install
 npm run dev
 ```
+
+4. Open http://localhost:5173 in Safari or Chrome.
+
+Leave that Terminal window open while you use the app. Stop it with Control-C.
+
+If `npm` is not found, quit Terminal, open it again, and repeat the commands. Node's installer adds it to your path only for new Terminal windows.
