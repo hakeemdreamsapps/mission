@@ -1,4 +1,4 @@
 {
-  "version": "1.3.0",
-  "notes": "Add several checklist items at once by separating names with commas."
+  "version": "1.4.0",
+  "notes": "Phone reminder alerts when a reminder is set on a task."
 }
